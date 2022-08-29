@@ -1,0 +1,33 @@
+Dataset:
+  # Batch size for longer sequence
+  batch_size: 300
+
+  # Please change the following paths
+  path_to_calibration: /path/to/calib
+  path_to_gt: /path/to/gt
+  path_to_poses: /path/to/poses
+  path_to_scans: /path/to/scans
+
+  # Sequence number (in case the dataset contains a number of sequences e.g KITTI Dataset)
+  sequence: 5
+
+Height_Map:
+  resolution: [0.01, 0.03, 0.05, 0.07, 0.09] # List of resolutions using which ground is required to be segmented
+  backward_range: -50.0 # Maximum -ve x_value for which points are to be considered.
+  fwd_range: 50.0 # Maximum +ve x_value for which points are to be considered.
+  left_range: 50.0 # Maximum +ve y_value for which points are to be considered.
+  right_range: -50.0 # # Maximum -ve y_value for which points are to be considered.
+  top: 1.5 # Maximum +ve z_value for which points are to be considered.
+  bottom: -2.0 # Maximum -ve z_value for which points are to be considered.
+
+Octomap:
+  ground_removal: true # Boolean for application of ground removal
+  height_filter: false # Boolean for application of a height filter
+
+  nearest_neighbors: 5 # Number of nearest neighbors to be considered while performing k-NN
+  resolution: 0.1 # Resolution on which the OctoMap will be running
+
+Results:
+  # Storage options
+  store_individual_label: true
+  store_pcd: true
